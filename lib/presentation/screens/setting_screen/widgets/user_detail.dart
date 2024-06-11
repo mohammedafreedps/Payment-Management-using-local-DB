@@ -15,11 +15,11 @@ Widget userDetail() {
               )),
         ],
       ),
-      CircleAvatar(
+      const CircleAvatar(
         backgroundColor: Colors.amber,
         radius: 75,
       ),
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
       Text(

@@ -10,13 +10,13 @@ Widget notificationButton() {
         children: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.notifications, size: 35, color: AppColors.iconColor),
+            icon: const Icon(Icons.notifications, size: 35, color: AppColors.iconColor),
           ),
-          Positioned(
+          const Positioned(
             right: 0,
             top: 0,
             child: badges.Badge(
-              badgeContent: Text('2'),
+              badgeContent: Text('2',style: TextStyle(color: AppColors.primaryColor),),
               badgeStyle: badges.BadgeStyle(badgeColor: Colors.red),
             ),
           ),

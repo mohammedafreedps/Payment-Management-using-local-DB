@@ -5,13 +5,13 @@ class ActivityBardelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       height: 70,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text('Your Activity',style: TextStyles.primaryBold.copyWith(fontSize: 20),),
-          Icon(Icons.filter_list,color: AppColors.accentColor,size: 35,)
+          const Icon(Icons.filter_list,color: AppColors.accentColor,size: 35,)
         ],
       )
     );

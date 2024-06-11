@@ -15,8 +15,9 @@ Widget activityTile(){
           ],
         ),
         Text('Store Name',style: TextStyles.primaryBold.copyWith(fontSize: 18),),
-        Text("Addresses",style: TextStyles.primaryNormal.copyWith(fontSize: 18)),
-        Divider()
+        Text('Return Time Remaining',style: TextStyles.secondaryNormal.copyWith(fontSize: 18),),
+        Text("Addresses",style: TextStyles.secondaryNormal.copyWith(fontSize: 18)),
+        const Divider()
       ],
     ),
   );

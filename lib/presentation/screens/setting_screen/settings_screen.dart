@@ -19,7 +19,7 @@ class SettingScreen extends StatelessWidget {
               expandedHeight: 350,
               backgroundColor: AppColors.secondaryColor,
               flexibleSpace: FlexibleSpaceBar(
-                background: Padding(padding: EdgeInsets.symmetric(horizontal: 20),
+                background: Padding(padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     userDetail(),
@@ -27,7 +27,7 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ),
             ),
-            SliverPadding(padding: EdgeInsets.only(top: 30)),
+            const SliverPadding(padding: EdgeInsets.only(top: 10)),
             SliverPersistentHeader(delegate: SearchBarDelegate(),pinned: true,),
             SliverList(delegate: SliverChildBuilderDelegate((context, index) {
               return settingMenuTile(icon: settingIcons[index], iconName: settingMenus[index]);

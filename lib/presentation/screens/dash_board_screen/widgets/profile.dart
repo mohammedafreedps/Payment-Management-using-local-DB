@@ -8,12 +8,12 @@ Widget profile() {
         onTap: (){
           
         },
-        child: CircleAvatar(
+        child: const CircleAvatar(
           radius: 35,
           backgroundColor: Colors.amber,
         ),
       ),
-      SizedBox(width: 15,),
+      const SizedBox(width: 15,),
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

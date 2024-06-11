@@ -9,11 +9,11 @@ class SentersHistory extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Sent Again',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 15,),
+        const SizedBox(height: 15,),
         SizedBox(
           height: 120,
           child: ListView.builder(
