@@ -19,24 +19,24 @@ Widget activityTile({required BuildContext context, required int index}) {
                   child: Text(
                 context
                     .watch<DashBoardProvider>()
-                    .activityList[index]
+                    .activitySearchResult[index]
                     .productName,
                 style: TextStyles.primaryNormal.copyWith(fontSize: 18),
               )),
               Text(
-                  '\$${context.watch<DashBoardProvider>().activityList[index].price}',
+                  '\$${context.watch<DashBoardProvider>().activitySearchResult[index].price}',
                   style: TextStyles.primaryNormal.copyWith(fontSize: 18))
             ],
           ),
           Text(
-            context.watch<DashBoardProvider>().activityList[index].storeName,
+            context.watch<DashBoardProvider>().activitySearchResult[index].storeName,
             style: TextStyles.primaryBold.copyWith(fontSize: 18),
           ),
           Text(
-            'Return Time Remaining ${context.watch<DashBoardProvider>().activityList[index].returnTimeLeft}',
+            'Return Time Remaining ${context.watch<DashBoardProvider>().activitySearchResult[index].returnTimeLeft}',
             style: TextStyles.secondaryNormal.copyWith(fontSize: 18),
           ),
-          Text(context.watch<DashBoardProvider>().activityList[index].address,
+          Text(context.watch<DashBoardProvider>().activitySearchResult[index].address,
               style: TextStyles.secondaryNormal.copyWith(fontSize: 18)),
           const Divider()
         ],

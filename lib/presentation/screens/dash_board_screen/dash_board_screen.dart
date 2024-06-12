@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:paymentmanagementapp/providers/dash_board_provider.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/activity_bar_delegate.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/activity_tile.dart';
@@ -31,7 +32,7 @@ class DashBoardScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             notificationButton(),
-                            profile(),
+                            profile(context: context),
                             const SizedBox(
                               height: 30,
                             ),
@@ -56,11 +57,20 @@ class DashBoardScreen extends StatelessWidget {
                     pinned: true,
                   )
                 : const SliverPadding(padding: EdgeInsets.only(top: 0)),
-            SliverPersistentHeader(delegate: ActivityBardelegate(),),
+            SliverPersistentHeader(
+              delegate: ActivityBardelegate(),
+            ),
             SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
-              return activityTile(index: index,context: context);
-            }, childCount: context.watch<DashBoardProvider>().activityList.length))
+              return activityTile(index: index, context: context)
+                  .animate(effects: const [
+                FadeEffect(duration: Duration(milliseconds: 1000)),
+              ]);
+            },
+                    childCount: context
+                        .watch<DashBoardProvider>()
+                        .activitySearchResult
+                        .length))
           ],
         ),
       ),

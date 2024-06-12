@@ -13,7 +13,7 @@ Widget sentersListTie({required BuildContext context, required int index}) {
           children: [
             CircleAvatar(
                 radius: 35,
-                backgroundColor: AppColors.primaryFontColor,
+                backgroundColor: AppColors.primaryColor,
                 backgroundImage: NetworkImage(
                   context
                       .watch<DashBoardProvider>()

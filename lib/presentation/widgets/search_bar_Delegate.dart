@@ -13,7 +13,6 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
         ? GestureDetector(
             onTap: () {
               context.read<DashBoardProvider>().checkSearchFocused(false);
-              context.read<DashBoardProvider>().test(false);
             },
             child: Container(
               height: 70,
@@ -42,6 +41,9 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
             color: AppColors.primaryColor,
             padding: EdgeInsets.symmetric(horizontal: (screenWidth - containerWidth) / 2, vertical: 12.5),
             child: TextField(
+              onChanged: (value){
+                context.read<DashBoardProvider>().searchResults(value);
+              },
               cursorColor: AppColors.accentColor,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.only(top: 11),
@@ -56,7 +58,7 @@ class SearchBarDelegate extends SliverPersistentHeaderDelegate {
                 prefixIcon: IconButton(
                   onPressed: () {
                     context.read<DashBoardProvider>().checkSearchFocused(true);
-                    context.read<DashBoardProvider>().test(true);
+                    context.read<DashBoardProvider>().searchResults('');
                   },
                   icon: const Icon(Icons.close),
                   color: AppColors.accentColor,
