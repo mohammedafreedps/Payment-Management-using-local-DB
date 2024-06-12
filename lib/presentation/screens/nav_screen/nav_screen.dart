@@ -4,6 +4,8 @@ import 'package:paymentmanagementapp/presentation/screens/scan_recipt_screen.dar
 import 'package:paymentmanagementapp/presentation/screens/sent_and_request_screen.dart';
 import 'package:paymentmanagementapp/presentation/screens/setting_screen/settings_screen.dart';
 import 'package:paymentmanagementapp/presentation/styles.dart';
+import 'package:paymentmanagementapp/providers/dash_board_provider.dart';
+import 'package:provider/provider.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -23,6 +25,7 @@ class _NavScreenState extends State<NavScreen> {
 
   @override
   Widget build(BuildContext context) {
+    context.read<DashBoardProvider>().populateData();
     return Scaffold(
       body: IndexedStack(
         index: selectedIndex,

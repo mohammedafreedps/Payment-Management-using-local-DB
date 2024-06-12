@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/senters_list_tile.dart';
+import 'package:paymentmanagementapp/providers/dash_board_provider.dart';
+import 'package:provider/provider.dart';
 
 class SentersHistory extends StatelessWidget {
   const SentersHistory({Key? key}) : super(key: key);
@@ -18,9 +20,9 @@ class SentersHistory extends StatelessWidget {
           height: 120,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 40, // Set your item count here
+            itemCount: context.watch<DashBoardProvider>().senterHistoryList.length, // Set your item count here
             itemBuilder: (context, index) {
-              return sentersListTie();
+              return sentersListTie(context: context, index: index);
             },
           ),
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/providers/dash_board_provider.dart';
+import 'package:paymentmanagementapp/providers/dash_board_provider.dart';
 import 'package:paymentmanagementapp/presentation/styles.dart';
 import 'package:provider/provider.dart';
 

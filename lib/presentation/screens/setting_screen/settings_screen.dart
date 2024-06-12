@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paymentmanagementapp/data/local_constant_data.dart';
 import 'package:paymentmanagementapp/presentation/screens/setting_screen/widgets/setting_menu_tile.dart';
-import 'package:paymentmanagementapp/presentation/widgets/search_bar_Delegate.dart';
+import 'package:paymentmanagementapp/presentation/widgets/search_bar_delegate.dart';
 import 'package:paymentmanagementapp/presentation/screens/setting_screen/widgets/user_detail.dart';
 import 'package:paymentmanagementapp/presentation/styles.dart';
 

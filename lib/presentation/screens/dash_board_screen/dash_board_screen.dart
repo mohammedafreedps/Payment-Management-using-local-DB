@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/providers/dash_board_provider.dart';
+import 'package:paymentmanagementapp/providers/dash_board_provider.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/activity_bar_delegate.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/activity_tile.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/notification_button.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/profile.dart';
-import 'package:paymentmanagementapp/presentation/widgets/search_bar_Delegate.dart';
+import 'package:paymentmanagementapp/presentation/widgets/search_bar_delegate.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/senters_history.dart';
 import 'package:paymentmanagementapp/presentation/screens/dash_board_screen/widgets/spendings.dart';
 import 'package:paymentmanagementapp/presentation/styles.dart';
@@ -20,7 +20,7 @@ class DashBoardScreen extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            context.watch<DashBoardProvider>().showDetailTest
+            context.watch<DashBoardProvider>().showDetail
                 ? SliverAppBar(
                     expandedHeight: 520,
                     backgroundColor: AppColors.secondaryColor,
@@ -35,7 +35,7 @@ class DashBoardScreen extends StatelessWidget {
                             const SizedBox(
                               height: 30,
                             ),
-                            spending(),
+                            spending(context: context),
                             const SizedBox(
                               height: 30,
                             ),
@@ -50,7 +50,7 @@ class DashBoardScreen extends StatelessWidget {
                     pinned: true,
                   ),
             const SliverPadding(padding: EdgeInsets.only(top: 30)),
-            context.watch<DashBoardProvider>().showDetailTest
+            context.watch<DashBoardProvider>().showDetail
                 ? SliverPersistentHeader(
                     delegate: SearchBarDelegate(),
                     pinned: true,
@@ -59,8 +59,8 @@ class DashBoardScreen extends StatelessWidget {
             SliverPersistentHeader(delegate: ActivityBardelegate(),),
             SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
-              return activityTile();
-            }, childCount: 10))
+              return activityTile(index: index,context: context);
+            }, childCount: context.watch<DashBoardProvider>().activityList.length))
           ],
         ),
       ),
